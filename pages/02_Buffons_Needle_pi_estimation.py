@@ -9,6 +9,29 @@ import streamlit as st
 from mc_core import choose_n_values
 
 
+SIDEBAR_STYLE = """
+<style>
+section[data-testid="stSidebar"] {
+  background-color: #f8f9fb;
+}
+section[data-testid="stSidebar"] > div {
+  padding-top: 1.2rem;
+}
+section[data-testid="stSidebar"] h2 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6c757d;
+  margin-bottom: 0.4rem;
+}
+section[data-testid="stSidebar"] label {
+  font-size: 0.9rem;
+}
+</style>
+"""
+
+st.sidebar.markdown(SIDEBAR_STYLE, unsafe_allow_html=True)
+
 def init_buffon_state() -> None:
     if "buffon_theta" not in st.session_state:
         st.session_state.buffon_theta = np.array([])

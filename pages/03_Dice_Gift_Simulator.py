@@ -10,6 +10,30 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 
+SIDEBAR_STYLE = """
+<style>
+section[data-testid="stSidebar"] {
+  background-color: #f8f9fb;
+}
+section[data-testid="stSidebar"] > div {
+  padding-top: 1.2rem;
+}
+section[data-testid="stSidebar"] h2 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6c757d;
+  margin-bottom: 0.4rem;
+}
+section[data-testid="stSidebar"] label {
+  font-size: 0.9rem;
+}
+</style>
+"""
+
+st.sidebar.markdown(SIDEBAR_STYLE, unsafe_allow_html=True)
+
+
 def init_dice_state() -> None:
     """Initialize session state for dice simulations."""
     if "dice_scenario1_results" not in st.session_state:
